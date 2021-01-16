@@ -67,6 +67,48 @@ Wait until the backed-up resources are fully deployed and active. Use the kubect
 
 <!--- BEGIN_TF_DOCS --->
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | >= 3.13, < 4.0 |
+| helm | >= 1.0, < 1.4.0 |
+| kubernetes | >= 1.10.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | >= 3.13, < 4.0 |
+| helm | >= 1.0, < 1.4.0 |
+| kubernetes | >= 1.10.0 |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| aws\_region | AWS region where secrets are stored. | `string` | n/a | yes |
+| bucket\_name | Bucket name to store the backups. | `string` | n/a | yes |
+| cluster\_identity\_oidc\_issuer | The OIDC Identity issuer for the cluster. | `string` | n/a | yes |
+| cluster\_identity\_oidc\_issuer\_arn | The OIDC Identity issuer ARN for the cluster that can be used to associate IAM roles with a service account. | `string` | n/a | yes |
+| cluster\_name | The name of the cluster | `string` | n/a | yes |
+| create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
+| enabled | Variable indicating whether deployment is enabled. | `bool` | `true` | no |
+| helm\_chart\_name | Velero Helm chart name to be installed | `string` | `"velero"` | no |
+| helm\_chart\_release\_name | Helm release name | `string` | `"velero"` | no |
+| helm\_chart\_repo | Velero repository name. | `string` | `"https://vmware-tanzu.github.io/helm-charts"` | no |
+| helm\_chart\_version | Velero Helm chart version. | `string` | `"2.14.5"` | no |
+| mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
+| namespace | Kubernetes namespace to deploy Velero Helm chart. | `string` | `"velero"` | no |
+| service\_account\_name | Velero service account name | `string` | `"velero"` | no |
+| settings | Additional settings which will be passed to the Helm chart values. | `map(any)` | `{}` | no |
+| volume\_snapshot\_name | Variable indicating the snapshot name. | `string` | `"velero-snapshot"` | no |
+
+## Outputs
+
+No output.
+
 <!--- END_TF_DOCS --->
 
 ## Authors
