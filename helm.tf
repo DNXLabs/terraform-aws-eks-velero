@@ -34,7 +34,7 @@ resource "helm_release" "velero" {
 
   set {
     name  = "configuration.backupStorageLocation.bucket"
-    value = aws_s3_bucket.velero.id
+    value = var.create_bucket ? aws_s3_bucket.velero[0].id : var.bucket_name
   }
 
   set {

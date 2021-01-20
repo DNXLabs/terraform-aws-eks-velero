@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "velero" {
-  count = var.enabled ? 1 : 0
-  
+  count = (var.enabled && var.create_bucket) ? 1 : 0
+
   bucket = var.bucket_name
   acl    = "private"
 

@@ -30,6 +30,12 @@ variable "service_account_name" {
   description = "Velero service account name"
 }
 
+variable "create_bucket" {
+  type        = bool
+  default     = true
+  description = "Create bucket to store or get the backups."
+}
+
 variable "bucket_name" {
   type        = string
   description = "Bucket name to store the backups."

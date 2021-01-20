@@ -26,7 +26,7 @@ data "aws_iam_policy_document" "kubernetes_velero" {
       "s3:ListMultipartUploadParts"
     ]
     resources = [
-      "arn:aws:s3:::${aws_s3_bucket.velero.id}/*"
+      "arn:aws:s3:::${var.bucket_name}/*"
     ]
     effect = "Allow"
   }
@@ -36,7 +36,7 @@ data "aws_iam_policy_document" "kubernetes_velero" {
       "s3:ListBucket"
     ]
     resources = [
-      "arn:aws:s3:::${aws_s3_bucket.velero.id}"
+      "arn:aws:s3:::${var.bucket_name}"
     ]
     effect = "Allow"
   }
