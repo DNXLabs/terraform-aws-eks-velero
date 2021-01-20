@@ -54,7 +54,7 @@ Execute the command below to view the contents of the backup and confirm that it
 velero backup describe wpb  --details
 ```
 
-At this point, your backup is ready. You can repeat this step every time you wish to have a manual backup, or you can configure a [schedule for automatic backups](https://velero.io/docs/master/how-velero-works/).
+At this point, your backup is ready. You can repeat this step every time you wish to have a manual backup, or you can configure a [schedule for automatic backups](https://velero.io/docs/v1.5/how-velero-works/#scheduled-backups).
 
 #### Step 3: Restore the deployment on the destination cluster
 
