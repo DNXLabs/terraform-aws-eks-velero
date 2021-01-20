@@ -93,6 +93,7 @@ Wait until the backed-up resources are fully deployed and active. Use the kubect
 | cluster\_identity\_oidc\_issuer | The OIDC Identity issuer for the cluster. | `string` | n/a | yes |
 | cluster\_identity\_oidc\_issuer\_arn | The OIDC Identity issuer ARN for the cluster that can be used to associate IAM roles with a service account. | `string` | n/a | yes |
 | cluster\_name | The name of the cluster | `string` | n/a | yes |
+| create\_bucket | Create bucket to store or get the backups. | `bool` | `true` | no |
 | create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
 | enabled | Variable indicating whether deployment is enabled. | `bool` | `true` | no |
 | helm\_chart\_name | Velero Helm chart name to be installed | `string` | `"velero"` | no |
