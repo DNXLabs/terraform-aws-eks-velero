@@ -73,16 +73,16 @@ Wait until the backed-up resources are fully deployed and active. Use the kubect
 |------|---------|
 | terraform | >= 0.13 |
 | aws | >= 3.13, < 4.0 |
-| helm | >= 1.0, < 1.4.0 |
-| kubernetes | >= 1.10.0 |
+| helm | >= 1.0, < 3.0 |
+| kubernetes | >= 1.10.0, < 3.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | aws | >= 3.13, < 4.0 |
-| helm | >= 1.0, < 1.4.0 |
-| kubernetes | >= 1.10.0 |
+| helm | >= 1.0, < 3.0 |
+| kubernetes | >= 1.10.0, < 3.0.0 |
 
 ## Inputs
 
@@ -99,7 +99,7 @@ Wait until the backed-up resources are fully deployed and active. Use the kubect
 | helm\_chart\_name | Velero Helm chart name to be installed | `string` | `"velero"` | no |
 | helm\_chart\_release\_name | Helm release name | `string` | `"velero"` | no |
 | helm\_chart\_repo | Velero repository name. | `string` | `"https://vmware-tanzu.github.io/helm-charts"` | no |
-| helm\_chart\_version | Velero Helm chart version. | `string` | `"2.14.5"` | no |
+| helm\_chart\_version | Velero Helm chart version. | `string` | `"2.20.0"` | no |
 | mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
 | namespace | Kubernetes namespace to deploy Velero Helm chart. | `string` | `"velero"` | no |
 | service\_account\_name | Velero service account name | `string` | `"velero"` | no |
