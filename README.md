@@ -103,7 +103,7 @@ Wait until the backed-up resources are fully deployed and active. Use the kubect
 | mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
 | namespace | Kubernetes namespace to deploy Velero Helm chart. | `string` | `"velero"` | no |
 | service\_account\_name | Velero service account name | `string` | `"velero"` | no |
-| settings | Additional settings which will be passed to the Helm chart values. | `map(any)` | `{}` | no |
+| settings | Additional settings which will be passed to the Helm chart values. | `map` | `{}` | no |
 | volume\_snapshot\_name | Variable indicating the snapshot name. | `string` | `"velero-snapshot"` | no |
 
 ## Outputs
