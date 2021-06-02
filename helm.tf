@@ -72,13 +72,8 @@ resource "helm_release" "velero" {
     value = "plugins"
   }
 
-  dynamic "set" {
-    for_each = var.settings
-
-    content {
-      name  = set.key
-      value = set.value
-    }
-  }
+  values = [
+    yamlencode(var.settings)
+  ]
 
 }
